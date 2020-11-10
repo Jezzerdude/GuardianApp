@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/browser_nav"
+    app:startDestination="@id/discoverFragment">
+
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.example.guardapp.ui.browser.discover.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover">
+               <action
+            android:id="@+id/action_discoverFragment_to_noConnectionFragment"
+            app:destination="@id/noConnectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noConnectionFragment"
+        android:name="com.example.guardapp.ui.browser.noconnection.NoConnectionFragment"
+        android:label="fragment_no_connection"
+        tools:layout="@layout/fragment_no_connection">
+        <action
+            android:id="@+id/action_noConnectionFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment" />
+
+        <action
+            android:id="@+id/action_noConnectionFragment_self"
+            app:destination="@id/noConnectionFragment" />
+    </fragment>
+</navigation>
